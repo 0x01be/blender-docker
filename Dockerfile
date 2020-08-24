@@ -29,14 +29,14 @@ RUN apk add --no-cache --virtual blender-build-dependencies \
 ENV CFLAGGS "$CFLAGS -U_FORTIFY_SOURCE"
 ENV CXXFLAGS "$CXXFLAGS -U_FORTIFY_SOURCE"
 
-RUN git clone  https://github.com/audaspace/audaspace /audaspace
+RUN git clone --depth 1  https://github.com/audaspace/audaspace /audaspace
 
 WORKDIR /audaspace/build
 
 RUN cmake ..
 RUN make install
 
-RUN git clone --depth 1 https://git.blender.org/blender.git /blender
+RUN git clone --depth 1 https://github.com/blender/blender /blender
 
 WORKDIR /blender
 
