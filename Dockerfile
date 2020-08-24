@@ -1,5 +1,7 @@
 FROM 0x01be/xpra
 
+USER root
+
 RUN apk add --no-cache --virtual blender-build-dependencies \
     git \
     build-base \
@@ -16,6 +18,10 @@ WORKDIR /blender
 
 RUN make deps
 RUN make install
+
+USER xpra
+
+WORKDIR /workspace
 
 ENV COMMAND "blender"
 
