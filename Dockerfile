@@ -18,8 +18,8 @@ RUN apk add --no-cache --virtual blender-build-dependencies \
     automake \
     libtool \
     nasm \
-    yasm-dev \
-    tcl-dev \
+    yasm \
+    tcl \
     bison \
     mesa-dev \
     boost-dev \
