@@ -9,6 +9,10 @@ RUN apk add --no-cache --virtual blender-build-dependencies \
     autoconf \
     automake \
     libtool \
+    nasm \
+    yasm \
+    tcl \
+    bison \
     mesa-dev \
     ttf-freefont
 
