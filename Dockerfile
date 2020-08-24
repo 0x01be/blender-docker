@@ -4,6 +4,15 @@ RUN apk add --no-cache --virtual blender-build-dependencies \
     git \
     build-base \
     cmake \
+    autoconf \
+    automake \
+    libtool \
+    llvm-dev \
+    glu-dev \
+    sqlite-dev \
+    openssl-dev \
+    flac-dev \
+    zlib-dev \
     libx11-dev \
     libxxf86vm-dev \
     libxcursor-dev \
@@ -14,9 +23,6 @@ RUN apk add --no-cache --virtual blender-build-dependencies \
     libpng-dev \
     freetype-dev \
     python3-dev \
-    autoconf \
-    automake \
-    libtool \
     nasm \
     yasm \
     tcl \
