@@ -1,47 +1,12 @@
 FROM 0x01be/xpra
 
 USER root
-
-RUN apk add --no-cache --virtual blender-build-dependencies \
-    git \
-    build-base \
-    cmake \
-    autoconf \
-    automake \
-    libtool \
-    nasm \
-    yasm \
-    tcl \
-    bison \
-    mesa-dev \
-    python3-dev \
-    ffmpeg-dev \
-    jack-dev \
-    libsndfile-dev \
-    openal-soft-dev \
-    sdl2-dev \
-    fftw-dev \
-    py3-numpy-dev \
-    doxygen \
-    graphviz \
-    sphinx
-
-ENV CFLAGGS "$CFLAGS -U_FORTIFY_SOURCE"
-ENV CXXFLAGS "$CXXFLAGS -U_FORTIFY_SOURCE"
-
-RUN git clone --depth 1  https://github.com/audaspace/audaspace /audaspace
-
-WORKDIR /audaspace/build
-
-RUN cmake ..
-RUN make install
-
-RUN git clone --depth 1 https://github.com/blender/blender /blender
-
-WORKDIR /blender
-
-RUN make PYTHON=/usr/bin/python3 deps
-RUN make PYTHON=/usr/bin/python3 install
+RUN apk add --no-cache \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    blender \
+    mesa-dri-swrast
 
 USER xpra
 
