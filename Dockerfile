@@ -31,7 +31,7 @@ ENV GODOT_VERSION 3.2.3
 
 ADD https://github.com/TobyLobster/ImportLDraw/releases/download/1.1.11/importldraw1.1.11_for_blender_281.zip importldraw1.1.11_for_blender_281.zip
 ADD https://gitlab.com/Zamme/blender2godot/-/raw/master/Code/blender2godot.zip blender2godot.zip
-ADD http://www.ldraw.org/library/updates/complete.zip parts.zip
+ADD https://www.ldraw.org/library/updates/complete.zip parts.zip
 ADD https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz export_templates.tpz
 
 RUN unzip parts.zip && rm parts.zip && chown -R xpra:xpra /home/xpra
