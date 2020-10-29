@@ -10,7 +10,5 @@ RUN apk add --no-cache \
 
 USER xpra
 
-WORKDIR /workspace
-
-ENV COMMAND "blender"
+ENV COMMAND blender
 
