@@ -17,6 +17,10 @@ RUN apk add --no-cache --virtual blender-dependencies \
     libexecinfo \
     yasm \
     eudev \
+    alsa-lib \
+    pulseaudio \
+    pulseaudio-alsa \
+    alsa-plugins-pulse \
     mesa-dri-swrast \
     py3-numpy
 
