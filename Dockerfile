@@ -1,7 +1,6 @@
 FROM 0x01be/xpra
 
-USER root
-RUN apk add --no-cache \
+RUN apk add --no-cache --virtual blender-dependencies \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
@@ -18,10 +17,6 @@ RUN apk add --no-cache \
     libexecinfo \
     yasm \
     eudev \
-    alsa-lib \
-    pulseaudio \
-    pulseaudio-alsa \
-    alsa-plugins-pulse \
     mesa-dri-swrast \
     py3-numpy
 
@@ -35,6 +30,5 @@ ADD https://www.ldraw.org/library/unofficial/ldrawunf.zip unofficial.zip
 RUN unzip parts.zip && rm parts.zip && chown -R xpra:xpra /home/xpra
 
 USER xpra
-
 ENV COMMAND blender
 
