@@ -1,7 +1,6 @@
 FROM 0x01be/xpra
 
-USER root
-RUN apk add --no-cache \
+RUN apk add --no-cache --virtual blender-dependencies \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
@@ -9,6 +8,5 @@ RUN apk add --no-cache \
     mesa-dri-swrast
 
 USER xpra
-
 ENV COMMAND blender
 
